@@ -57,7 +57,7 @@ const Header = () => {
           />
 
           <button onClick={handleSignOut} className="pl-1 w-12 h-12 relative ">
-            <div className="flex justify-center text-xl lg:text-3xl">
+            <div className="flex justify-center text-xl text-white lg:text-3xl">
               <VscSignOut />{" "}
             </div>
           </button>
