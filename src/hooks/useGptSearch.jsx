@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GENAI_KEY, otherOptions } from "../utilis/constant";
+import { GENAI_KEY, options } from "../utilis/constant";
 import { useDispatch } from "react-redux";
 import { addGptMovies } from "../utilis/gptSlice";
 
@@ -11,7 +11,7 @@ const useGptSearch = () => {
       "https://api.themoviedb.org/3/search/multi?query=" +
         movie +
         "&include_adult=false&language=en-US&page=1}",
-      otherOptions
+      options
     );
     const json = await data.json();
     console.log(json.results);
