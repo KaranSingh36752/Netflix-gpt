@@ -9,7 +9,7 @@ import {
 import { auth } from "../utilis/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utilis/userSlice";
-import { AVATAR } from "../utilis/constant";
+import { AVATAR, BG_URL } from "../utilis/constant";
 
 const Login = () => {
   const [isSignInform, setIsSignInform] = useState(true);
@@ -43,7 +43,7 @@ const Login = () => {
           .then((userCredential) => {
             // Signed up
             const user = userCredential.user;
-            console.log(user);
+           console.log(user);
             //
             updateProfile(auth.currentUser, {
               displayName: name.current.value , photoURL: AVATAR
@@ -97,7 +97,7 @@ const Login = () => {
         <img
           className="w-full h-full object-cover"
           alt="bg-image"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/655a9668-b002-4262-8afb-cf71e45d1956/5ff265b6-3037-44b2-b071-e81750b21783/IN-en-20240715-POP_SIGNUP_TWO_WEEKS-perspective_WEB_c6d6616f-4478-4ac2-bdac-f54b444771dd_medium.jpg"
+          src={BG_URL}
         />
       </div>
       <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -141,13 +141,13 @@ const Login = () => {
             {isSignInform ? "Sign In" : "Sign Up"}
           </button>
 
-          <span className="text-white mx-3">
+          <span className="text-white mx-3  ">
             New to Netflix?
             <span
               onClick={Togglehandler}
-              className="font-semibold cursor-pointer mx-1"
+              className="font-semibold cursor-pointer pl-1 contain-inline-size   "
             >
-              Sign up now.
+              Sign up <span className="pl-3">now.</span>
             </span>
           </span>
         </form>

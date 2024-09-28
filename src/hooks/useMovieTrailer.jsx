@@ -20,7 +20,7 @@ const useMovieTrailer = (Movie_ID) => {
   
       // If no trailer found, use the first video
       const trailer = filterVideo.length === 0 ? json.results[0] : filterVideo[0];
-      console.log(trailer);
+      //console.log(trailer);
   
       //     if (trailer) {
       //       setTrailerID(trailer.key);
